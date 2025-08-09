@@ -1,7 +1,2 @@
-<script lang="ts">
-	export const prerender = true;
-</script>
-
-<main class="flex items-center justify-center min-h-screen bg-gray-100">
-  <div class="bg-white p-8 rounded shadow-md">BRB</div>
-</main>
+<h1>Home</h1>
+<p>Welcome! Use <code>admin / pass123</code> to simulate a login.</p>
