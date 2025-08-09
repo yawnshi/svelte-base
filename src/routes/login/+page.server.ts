@@ -2,7 +2,7 @@ import { fail, redirect, type Actions } from "@sveltejs/kit";
 import { verifyCredentials, issueSession } from "$lib/server/auth";
 
 export const load = ({ locals }) => {
-  if (locals.user) throw redirect(303, "/dashboard");
+  if (locals.user) throw redirect(303, "/");
   return {};
 };
 
@@ -26,6 +26,6 @@ export const actions: Actions = {
       maxAge: 60 * 60,
     });
 
-    throw redirect(303, "/dashboard");
+    throw redirect(303, "/");
   },
 };

@@ -4,7 +4,7 @@
   let message = $state<string | null>(data?.message ?? null);
 </script> 
 
-<section class="min-h-[60vh] grid place-items-center">
+<section class="min-h-screen grid place-items-center">
   <div class="w-full max-w-md rounded-2xl border bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
     <h1 class="mb-6 text-2xl font-semibold tracking-tight">Sign in</h1>
     <form method="POST" use:enhance class="grid gap-4">

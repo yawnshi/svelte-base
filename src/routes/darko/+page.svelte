@@ -2,8 +2,8 @@
   let { data } = $props();
 </script>
 
-<section class="grid gap-4">
-  <h1 class="text-3xl font-bold">Dashboard</h1>
+<section class="mx-5 pt-4 grid gap-4">
+  <h1 class="text-3xl font-bold">Darko</h1>
   <div
     class="rounded-2xl border bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
   >
