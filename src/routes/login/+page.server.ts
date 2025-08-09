@@ -7,7 +7,7 @@ export const load = ({ locals }) => {
 };
 
 export const actions: Actions = {
-  default: async ({ request, cookies }) => {
+  default: async ({ request, cookies, url }) => {
     const form = await request.formData();
     const username = String(form.get("username") ?? "");
     const password = String(form.get("password") ?? "");
@@ -22,8 +22,8 @@ export const actions: Actions = {
       path: "/",
       httpOnly: true,
       sameSite: "lax",
-      secure: true,
-      maxAge: 60 * 60, // 1 hour
+      secure: url.protocol === "https:", // allow localhost http during dev
+      maxAge: 60 * 60,
     });
 
     throw redirect(303, "/dashboard");

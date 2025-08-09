@@ -2,5 +2,13 @@
   let { data } = $props();
 </script>
 
-<h1>Dashboard</h1>
-<p>Hello, <strong>{data.user.name}</strong> — you are logged in.</p>
+<section class="grid gap-4">
+  <h1 class="text-3xl font-bold">Dashboard</h1>
+  <div
+    class="rounded-2xl border bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+  >
+    <p class="text-zinc-700 dark:text-zinc-300">
+      Hello, <strong>{data.user.name}</strong> — you are logged in.
+    </p>
+  </div>
+</section>
