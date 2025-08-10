@@ -2,12 +2,12 @@ import { fail, redirect, type Actions } from "@sveltejs/kit";
 import { verifyCredentials, issueSession } from "$lib/server/auth";
 
 export const load = ({ locals }) => {
-  if (locals.user) throw redirect(303, "/dashboard");
+  if (locals.user) throw redirect(303, "/");
   return {};
 };
 
 export const actions: Actions = {
-  default: async ({ request, cookies }) => {
+  default: async ({ request, cookies, url }) => {
     const form = await request.formData();
     const username = String(form.get("username") ?? "");
     const password = String(form.get("password") ?? "");
@@ -22,10 +22,10 @@ export const actions: Actions = {
       path: "/",
       httpOnly: true,
       sameSite: "lax",
-      secure: true,
-      maxAge: 60 * 60, // 1 hour
+      secure: url.protocol === "https:", // allow localhost http during dev
+      maxAge: 60 * 60,
     });
 
-    throw redirect(303, "/dashboard");
+    throw redirect(303, "/");
   },
 };
